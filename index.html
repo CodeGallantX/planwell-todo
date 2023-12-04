@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanWell</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab|Poppins">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="todo.ico" type="image/x-icon">
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Poppins, sans-serif;
+            padding: 3%;
+        }
+
+        h1,h2, h3, h4, h5, h6 {
+            font-family: "Roboto Slab", serif;
+            font-size: 45px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .header-line {
+            width: 97%;
+        }
+
+        .card {
+            background: #e46e14;
+            margin-bottom: 5%;
+            border-radius: 25px;
+            padding: 20px;
+            overflow: hidden;
+            resize: both;
+            text-overflow: ellipsis;
+            transition: 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            background: #092d1f;
+            border-right: 5px solid #e46e14;
+            border-bottom: 5px solid #e46e14;
+        }
+
+        .card:hover #remove_button {
+            background: #e46e14;
+        }
+
+        .form_one {
+            padding-right: 4%;
+            padding-bottom: 3%;
+        }
+
+        .submit_form input {
+            color: black;
+        }
+
+        .submit_form {
+            width: 312px;
+            height: 398px;
+            text-align: center;
+            padding: 2%;
+            background: #e46e14;
+            border-radius: 25px;
+            transition: 0.2s ease-in-out;
+        }
+
+        .submit_form textarea {
+            color: black;
+            overflow: auto;
+            max-width: 280px;
+            max-height: 300px;
+            margin-top: 10px;
+        }
+        
+        .submit_form:hover {
+            background: #092d1f;
+            border-bottom: 3px solid #e46e14;
+        }
+
+        .submit_form:hover #submit_button {
+            background: #e46e14;
+        }
+
+        #remove_button,
+        #submit_button {
+            background: #092d1f;
+            border: 0;
+            color: white;
+        }
+
+        #remove_button:hover,
+        #submit_button:hover {
+            background: #e46e14;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    
+
+    <center class="row">
+        <h1>PlanWell</h1>
+        <p>Manage your daily tasks with <strong>PlanWell</strong> to-do list and watch as you achieve your goals in time.</p>
+        <hr class="header-line">
+    </center>
+    <div class="row">
+        <div class="col-md-8">
+            
+            <div class="card">
+                <center><b>PlanWell ToDo List</b></center>
+                <hr>
+                Dec. 4, 2023, 1:08 p.m.
+                <hr>
+                <br>
+                <br>
+                <form class="form_one" action="/del/4" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="o1r5nKKrJtAWWw284twAldiLpMiHkrGmsbEMJLjEXPs90Rhzaorc3xC1XMLLTWJP">
+                    <button id="remove_button" value="remove" type="submit" class="btn btn-primary"
+                        style="float: right;"><span class="glyphicon glyphicon-trash"></span> remove</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <div class="submit_form">
+                <form method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="o1r5nKKrJtAWWw284twAldiLpMiHkrGmsbEMJLjEXPs90Rhzaorc3xC1XMLLTWJP">
+                    <tr>
+    <th><label for="id_title">Title:</label></th>
+    <td>
+      
+      <input type="text" name="title" maxlength="100" required id="id_title">
+      
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th><label for="id_details">Details:</label></th>
+    <td>
+      
+      <textarea name="details" cols="40" rows="10" required id="id_details">
+</textarea>
+      
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th><label for="id_date">Date:</label></th>
+    <td>
+      
+      <input type="text" name="date" value="2023-12-04 16:22:45" required id="id_date"><input type="hidden" name="initial-date" value="2023-12-04 16:22:45" id="initial-id_date">
+      
+      
+        
+      
+    </td>
+  </tr>
+                    <center>
+                        <input type="submit" id="submit_button" value="submit" class="btn btn-default">
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
